@@ -2,3 +2,10 @@
 
 using namespace std;
 
+class Router {
+
+};
+
+class Administrador {
+
+};

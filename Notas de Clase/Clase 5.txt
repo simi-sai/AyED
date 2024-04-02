@@ -1,0 +1,22 @@
+División Entera
+
+Imput : dividendo(n) y divisor(v)
+Output : cociente(c) y resto(r)
+
+n = (c * v) + r
+
+Ej: 17 divEnt 3, c = 5, r = 2;
+
+divEnt: int x int -> int x int
+
+divEnt(n,v) = (c,r)
+
+cocTra = valor inicial ?
+         incremento de a uno
+
+corte recursion: cuando cocTra*v > n
+
+funcion de retorno : cocTra-1, n-(cocTra-1)*v
+
+divEntRec(n,v,c) = (c - 1, v - (c-1) * v)  if c*v > n
+                 divEntRec(n,v,c+1)

@@ -1,0 +1,26 @@
+Burbuja, seleccion insercion
+
+n-1 pasadas, donde la comparacion por pasada en general
+es decreciente desde n-1 hata 1
+la cantidad de comparaciones es: 
+
+ 1 + 2 + 3 + ... + n-1
+
+ Sumatoria i, i = 1 ... n-1
+
+ sumatoria i, i = 1 ... n = n * (n+1) / 2
+
+ orden de las funciones: 
+    dadas 2 funciones f(x) y g(x), se dice que f(x) esta en el orden de g(x), si hay constantes
+    c y m tal que f(x) < c.g(x) para toda x > m
+
+ 1+2+3+4+5 = 5*6/2 = 15
+
+ Sumatoria i, i = 1 ... n-1  (n-1) * n / 2 = (n*(n-n))/2
+
+ la cantidad de comparaciones a realizar son a lo mas (n*n-n)/2
+
+  producto interno de 2 vectores, cuantas operaciones?
+
+  2 vectores de tamaño n,  cuantas operaciones a1*b1 + a2*b2 + ... + an*bn = n + n-1 < 2n
+

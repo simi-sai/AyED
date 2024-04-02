@@ -1,0 +1,42 @@
+
+Listas Tipo T
+
+constructores
+
+ nL: -> Lista
+
+ add: Lista,T -> Lista
+
+otras funciones
+
+ concat: Lista,Lista -> Lista
+
+ inicio: Lista,Nat -> Lista
+
+ final: Lista,Nat -> Lista
+
+
+Comportamiento
+
+l1,l2: Lista
+t1,t2: T
+
+concat(nL,l2) = l2
+concat(add(l1,t1),l2) = add(concat(l1,l2),t1) 
+
+l1 = [7,3]
+l2 = [2,6]
+
+concat(l1,l2) = [7,3,2,6] //lista con notacion de array
+
+l1 = add(add(nL,3),7)
+l2 = add(add(nL,6),2)
+
+concat(add(add(nL,3),7),add(add(nL,6),2)) =
+add(concat(add(nL,3),add(add(nL,6),2)),7) =
+add(add(concat(nL,add(add(nL,6),2)),3),7) =
+add(add(add(add(nL,6),2),3),7)
+
+otras funciones
+
+inicio(l1,n) =  

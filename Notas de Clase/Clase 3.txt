@@ -1,0 +1,104 @@
+
+Recursividad (tema de hoy)
+
+Recursion: es la capacidad de una funcion de llamarse a si misma en su cuerpo de definicion
+
+f(x) = ... f()
+
+Por Ejemplo: El factorial(x)
+
+fact(x) = { 1 si x = 1
+            x * fact(x-1) si x > 1 }   def de funcion por tramos
+
+x pertecen al conjunto de numeros naturales
+
+fact(4) = 4 * fact(3) 
+        = 4 * 3 * fact(2)
+        = 4 * 3 * 2 * fact(1)
+        = 4 * 3 * 2 * 1
+        = 24
+
+
+recursividad simple: 
+
+f = ... f ...   (con una sola llamada a la recurividad de su cuerpo)             
+
+recursividad multiple:
+
+f = ... f ... f ... (con varios llamados recursivos) [ej funcion de fibonacci]
+
+recursividad indirecta:
+
+f = ... g ...
+g = ... f ...    (cuando hay recursividad de distintas funciones)
+
+
+caracteristicas de una funcion recursiva bien definida
+
+1) tener un tramo sin llamada recursiva -> (que brinde un valor concreto)
+2) el/los tramos recursivos tienen llamadas con su parametro/s (que van cambiando de llamada en
+llamada) de forma tal que se garantice que el tramo no recursivo SIEMPRE sea alcanzado.
+
+
+Secuencia de Fibonacci = 
+1,1,2,3,5,8,13,21 ... etc 
+
+fibo(n) = ?
+
+fibo(n) = { 1 si n = 1,2
+            fibo(n - 1) + fibo(n+2) si n > 2}
+
+fibo(5) = fibo(4) + fibo(3)
+        = fibo(3) + fib(2) + fibo(2) + fibo(1)
+        = fibo(2) + fibo(1) + 1 + 1 + 1
+        = 1 + 1 + 1 + 1 + 1
+        = 5
+
+fibo(7) = fibo(6) + fibo(5)
+        = f(5) + f(4) + f(4) + f(3)
+        = f(4) + f(3) + f(3) + f(2) + f(3) + f(2) + f(2) + f(1)
+        = f(3) + f(2) + f(2) + f(1) + f(2) + f(1) + 1 + f(2) + f(1) + 1 + 1
+        = f(2) + f(1) + 1 + 1 + 1 + 1 + 1 + 1 + 1 + 1 + 1 + 1
+        = 1 + 1 + 1 + 1 + 1 + 1 + 1 + 1 + 1 + 1 + 1 + 1
+        = 12
+
+g(n) = { 10 si n = 100
+         1 + g(n+1) si n < 100 }
+
+dominio = naturales entre 1 y 100
+
+concatenacion de array de chars:
+
+c[char] = ['s','a','n','t','i','a','g','o']
+
+concat(c) = cAux(c,0,"");
+
+cAux(c[char], int p, string s) = { s si c[p] == " "
+                                 cAux(c,p+1,s.c[p]) si c[p] != " " }
+
+
+char c[100];
+concat(char [100], int p) {
+    if (p = 100) { return RESULT_ACUMULADO; }
+    else { c[p] + concat(c,p-1); }
+
+    String c = concat(Arr,99);
+}
+
+
+
+fAux(x,n,a1,a2) = { fAux(n,p+1,a1+a2,a1) si n > p    // n = valor a calcular; p = posicion donde
+                    a1 + a2 si n = p }               // estoy calculando; a1 es el fib anterior a p;
+                                                     // a2 es el fib ante anterior a p;
+
+supuesto = ya conozco f(p-1) f(p-2) -> resultado = f(p-1) + f(p-2)
+
+fibo(n) = { 1 si n < 3
+            fAux(n,3,1,1) n >= 3 }
+
+
+fibo(6) = fAux(6,3,1,1)
+        = fAux(6,4,2,1)
+        = fAux(6,5,3,2)
+        = fAux(6,6,5,3)
+        = 5 + 3 = 8

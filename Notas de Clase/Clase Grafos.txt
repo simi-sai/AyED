@@ -1,0 +1,35 @@
+Algoritmos con grafos
+  1_ Topological Sort
+  2_ Minimum Spaning Tree (MST)
+    2.1_ Prim
+    2.2_ Kruskal
+
+Grafo = (V,A)
+V = {Vi}
+A = {(Vi,Vj)k}
+
+Una arista puede tener un tercer valor asociado, peso o costo de la arista
+
+Grafo dirigido o no dirigido: (Dep de arista)
+
+(En ordenamiento dijimos que relacion de comparacion tiene que ser de orden total)
+
+entre correlatividades de materias
+
+Mi < Mj si entre las correlativas necesarias para Mj figura Mi, o si esta dentro
+de la cadena de correlatividades
+
+TOPOLOGICAL Sort
+  dado un grafo (V,A), establece una secuencia de vertices v1, v2, ..., vn
+tal que:
+       Vi < Vj    i < j si hay aristas
+       (Vi,Vm),(Vm,Vk)...(Vg,Vj)
+       que puedan conformar un camino entre vertices 
+       y que no pueda existir un camino entre Vj y Vi
+
+    (Topological sort es para grafos dirigidos sin peso)
+
+    AlGORITMO
+      Determinar el grado de entrada de un vertice,
+      el grado de entrada es la cantidad de aristas cuyo vertice es adyacente del otro 
+      
